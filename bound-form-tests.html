@@ -1,0 +1,28 @@
+<template name="simpleBoundForm">
+  {{#BoundForm document=document}}
+    <input type="text" name="foo">
+    <input type="text" name="bar.baz">
+    <input type="text" name="one.two.three">
+  {{/BoundForm}}
+</template>
+
+<template name="formWithTypes">
+  {{#BoundForm document=document}}
+    <input type="checkbox" name="on" data-type="Boolean" checked>
+    <input type="checkbox" name="off" data-type="Boolean">
+    
+    <input type="checkbox" name="tags" data-type="Array" value="first" checked>
+    <input type="checkbox" name="tags" data-type="Array" value="second" checked>
+    <input type="checkbox" name="tags" data-type="Array" value="third">
+    <input type="checkbox" name="tags" data-type="Array" value="fourth" checked>
+    <input type="checkbox" name="tags" data-type="Array" value="fifth">
+    
+    <input type="checkbox" name="empty" data-type="Array" value="empty">
+  {{/BoundForm}}
+</template>
+
+<template name="formWithInitial">
+  {{#BoundForm document=document initial=initial}}
+    <input type="text" name="foo.bar">
+  {{/BoundForm}}
+</template>
